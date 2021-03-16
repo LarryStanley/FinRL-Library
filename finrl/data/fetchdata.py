@@ -128,7 +128,7 @@ class FetchData:
         for i in self.config["pairs"]:
             i = i.replace("/","_")
             for text in data:
-                if f"{self.config['datadir']}" and f"{i}-{timeframe}" in text:
+                if f"{i}-{timeframe}" in text:
                   i_df = pd.read_json(text)
                   if not i_df.empty:
                        i_df["tic"] = i
